@@ -1,0 +1,805 @@
+# This file is part of PDB2PQR.
+# See https://www.poissonboltzmann.org/ for more information about use and redistribution.
+- name: ALA
+  atoms:
+  - name: N
+    x: 1.201
+    y: 0.847
+    z: 0.000
+    bonds:
+      - CA
+      - H
+  - name: CA
+    x: 0.000
+    y: 0.000
+    z: 0.000
+    bonds:
+      - N
+      - C
+      - CB
+      - HA
+  - name: C
+    x: -1.250
+    y: 0.881
+    z: 0.000
+    bonds:
+      - CA
+      - O
+  - name: O
+    x: -2.185
+    y: 0.660
+    z: -0.784
+    bonds:
+      - C
+  - name: CB
+    x: 0.020
+    y: -0.927
+    z: 1.209
+    bonds:
+      - CA
+      - HB1
+      - HB2
+      - HB3
+  - name: H
+    altname: HN
+    x: 1.201
+    y: 1.847
+    z: 0.000
+    bonds:
+      - N
+  - name: HA
+    x: 0.000
+    y: -0.557
+    z: -0.831
+    bonds:
+      - CA
+  - name: HB1
+    altname: 1HB
+    x: 0.833
+    y: -1.507
+    z: 1.171
+    bonds:
+      - CB
+  - name: HB2
+    altname: 2HB
+    x: 0.040
+    y: -0.381
+    z: 2.047
+    bonds:
+      - CB
+  - name: HB3
+    altname: 3HB
+    x: -0.799
+    y: -1.500
+    z: 1.204
+    bonds:
+      - CB
+- name: ARG
+  atoms:
+  - name: N
+    x: 1.201
+    y: 0.847
+    z: 0.000
+    bonds:
+    - CA
+    - H
+  - name: CA
+    x: 0.000
+    y: 0.000
+    z: 0.000
+    bonds:
+    - N
+    - C
+    - CB
+    - HA
+  - name: C
+    x: -1.250
+    y: 0.881
+    z: 0.000
+    bonds:
+    - CA
+    - O
+  - name: O
+    x: -2.185
+    y: 0.660
+    z: -0.784
+    bonds:
+    - C
+  - name: CB
+    x: -0.019
+    y: -0.932
+    z: 1.222
+    bonds:
+    - CA
+    - CG
+    - HB2
+    - HB3
+  - name: CG
+    x: 1.158
+    y: -1.892
+    z: 1.324
+    bonds:
+    - CB
+    - CD
+    - HG2
+    - HG3
+  - name: CD
+    x: 1.060
+    y: -2.755
+    z: 2.534
+    bonds:
+    - CG
+    - NE
+    - HD2
+    - HD3
+  - name: NE
+    x: 2.184
+    y: -3.677
+    z: 2.638
+    bonds:
+    - CD
+    - CZ
+    - HE
+  - name: CZ
+    x: 2.321
+    y: -4.549
+    z: 3.631
+    bonds:
+    - NE
+    - NH1
+    - NH2
+  - name: NH1
+    x: 1.541
+    y: -4.507
+    z: 4.705
+    bonds:
+    - CZ
+    - HH11
+    - HH12
+  - name: NH2
+    x: 3.296
+    y: -5.454
+    z: 3.573
+    bonds:
+    - CZ
+    - HH21
+    - HH22
+  - name: H
+    altname: HN
+    x: 1.201
+    y: 1.847
+    z: 0.000
+    bonds:
+    - N
+  - name: HA
+    x: 0.000
+    y: -0.558
+    z: -0.830
+    bonds:
+    - CA
+  - name: HB2
+    altname: 2HB
+    x: -0.027
+    y: -0.363
+    z: 2.044
+    bonds:
+    - CB
+  - name: HB3
+    altname: 1HB
+    altname: HB1
+    altname: 3HB
+    x: -0.858
+    y: -1.474
+    z: 1.184
+    bonds:
+    - CB
+  - name: HG2
+    altname: 2HG
+    x: 1.174
+    y: -2.473
+    z: 0.510
+    bonds:
+    - CG
+  - name: HG3
+    altname: 1HG
+    altname: HG1
+    altname: 3HG
+    x: 2.005
+    y: -1.362
+    z: 1.371
+    bonds:
+    - CG
+  - name: HD2
+    altname: 2HD
+    x: 1.044
+    y: -2.172
+    z: 3.346
+    bonds:
+    - CD
+  - name: HD3
+    altname: 1HD
+    altname: HD1
+    altname: 3HD
+    x: 0.212
+    y: -3.283
+    z: 2.485
+    bonds:
+    - CD
+  - name: HE
+    x: 2.887
+    y: -3.652
+    z: 1.927
+    bonds:
+    - NE
+  - name: HH11
+    altname: 1HH1
+    x: 0.817
+    y: -3.820
+    z: 4.771
+    bonds:
+    - NH1
+  - name: HH12
+    altname: 2HH1
+    x: 1.676
+    y: -5.163
+    z: 5.448
+    bonds:
+    - NH1
+  - name: HH21
+    altname: 1HH2
+    x: 3.903
+    y: -5.485
+    z: 2.779
+    bonds:
+    - NH2
+  - name: HH22
+    altname: 2HH2
+    x: 3.420
+    y: -6.103
+    z: 4.323
+    bonds:
+    - NH2
+  dihedrals:
+  - [N, CA, CB, CG]
+  - [CA, CB, CG, CD]
+  - [CB, CG, CD, NE]
+  - [CG, CD, NE, CZ]
+  - [CD, NE, CZ, NH1]
+- name: ASN
+  atoms:
+  - name: N
+    x: 1.201
+    y: 0.847
+    z: 0.000
+    bonds:
+    - CA
+    - H
+  - name: CA
+    x: 0.000
+    y: 0.000
+    z: 0.000
+    bonds:
+    - N
+    - C
+    - CB
+    - HA
+  - name: C
+    x: -1.250
+    y: 0.881
+    z: 0.000
+    bonds:
+    - CA
+    - O
+  - name: O
+    x: -2.185
+    y: 0.660
+    z: -0.784
+    bonds:
+    - C
+  - name: CB
+    x: 0.050
+    y: -1.025
+    z: 1.129
+    bonds:
+    - CA
+    - CG
+    - HB2
+    - HB3
+  - name: CG
+    x: 1.239
+    y: -1.965
+    z: 1.044
+    bonds:
+    - CB
+    - OD1
+    - ND2
+  - name: OD1
+    x: 2.060
+    y: -1.867
+    z: 0.126
+    bonds:
+    - CG
+  - name: ND2
+    x: 1.344
+    y: -2.870
+    z: 2.015
+    bonds:
+    - CG
+    - HD21
+    - HD22
+  - name: H
+    altname: HN
+    x: 1.201
+    y: 1.847
+    z: 0.000
+    bonds:
+    - N
+  - name: HA
+    x: 0.000
+    y: -0.510
+    z: -0.860
+    bonds:
+    - CA
+  - name: HB2
+    altname: 2HB
+    x: 0.096
+    y: -0.535
+    z: 2.000
+    bonds:
+    - CB
+  - name: HB3
+    altname: 1HB
+    altname: HB1
+    altname: 3HB
+    x: -0.788
+    y: -1.571
+    z: 1.098
+    bonds:
+    - CB
+  - name: HD22
+    altname: 2HD2
+    x: 0.657
+    y: -2.905
+    z: 2.741
+    bonds:
+    - ND2
+  - name: HD21
+    altname: 1HD2
+    x: 2.108
+    y: -3.514
+    z: 2.018
+    bonds:
+    - ND2
+  dihedrals:
+  - [N, CA, CB, CG]
+  - [CA, CB, CG, OD1]
+- name: ASP
+  atoms:
+  - name: N
+    x: 1.201
+    y: 0.847
+    z: 0.000
+    bonds:
+    - CA
+    - H
+  - name: CA
+    x: 0.000
+    y: 0.000
+    z: 0.000
+    bonds:
+    - N
+    - C
+    - CB
+    - HA
+  - name: C
+    x: -1.250
+    y: 0.881
+    z: 0.000
+    bonds:
+    - CA
+    - O
+  - name: O
+    x: -2.185
+    y: 0.660
+    z: -0.784
+    bonds:
+    - C
+  - name: CB
+    x: 0.043
+    y: -1.017
+    z: 1.123
+    bonds:
+    - CA
+    - CG
+    - HB2
+    - HB3
+  - name: CG
+    x: 1.229
+    y: -1.966
+    z: 1.053
+    bonds:
+    - CB
+    - OD1
+    - OD2
+  - name: OD1
+    x: 2.058
+    y: -1.864
+    z: 0.127
+    bonds:
+    - CG
+  - name: OD2
+    x: 1.319
+    y: -2.810
+    z: 1.959
+    bonds:
+    - CG
+  - name: H
+    altname: HN
+    x: 1.201
+    y: 1.847
+    z: 0.000
+    bonds:
+    - N
+  - name: HA
+    x: 0.000
+    y: -0.511
+    z: -0.860
+    bonds:
+    - CA
+  - name: HB2
+    altname: 2HB
+    x: 0.086
+    y: -0.524
+    z: 1.992
+    bonds:
+    - CB
+  - name: HB3
+    altname: 1HB
+    altname: HB1
+    altname: 3HB
+    x: -0.796
+    y: -1.559
+    z: 1.089
+    bonds:
+    - CB
+  dihedrals:
+    - [N, CA, CB, CG]
+    - [CA, CB, CG, OD1]
+- name: CYS
+  atoms:
+  - name: N
+    x: 1.201
+    y: 0.847
+    z: 0.000
+    bonds:
+    - CA
+    - H
+  - name: CA
+    x: 0.000
+    y: 0.000
+    z: 0.000
+    bonds:
+    - N
+    - C
+    - CB
+    - HA
+  - name: C
+    x: -1.250
+    y: 0.881
+    z: 0.000
+    bonds:
+    - CA
+    - O
+  - name: O
+    x: -2.185
+    y: 0.660
+    z: -0.784
+    bonds:
+    - C
+  - name: CB
+    x: 0.018
+    y: -0.958
+    z: 1.184
+    bonds:
+    - CA
+    - SG
+    - HB2
+    - HB3
+  - name: SG
+    x: 1.431
+    y: -2.085
+    z: 1.212
+    bonds:
+    - CB
+    - HG
+  - name: H
+    altname: HN
+    x: 1.201
+    y: 1.847
+    z: 0.000
+    bonds:
+    - N
+  - name: HA
+    x: 0.000
+    y: -0.542
+    z: -0.840
+    bonds:
+    - CA
+  - name: HB2
+    altname: 2HB
+    x: 0.033
+    y: -0.417
+    z: 2.024
+    bonds:
+    - CB
+  - name: HB3
+    altname: 1HB
+    altname: HB1
+    altname: 3HB
+    x: -0.818
+    y: -1.506
+    z: 1.155
+    bonds:
+    - CB
+  - name: HG
+    altname: 1HG
+    altname: HG1
+    x: 2.014
+    y: -1.908
+    z: 0.419
+    bonds:
+    - SG
+  dihedrals:
+  - [N, CA, CB, SG]
+- name: GLN
+  atoms:
+  - name: N
+    x: 1.201
+    y: 0.847
+    z: 0.000
+    bonds:
+    - CA
+    - H
+  - name: CA
+    x: 0.000
+    y: 0.000
+    z: 0.000
+    bonds:
+    - N
+    - C
+    - CB
+    - HA
+  - name: C
+    x: -1.250
+    y: 0.881
+    z: 0.000
+    bonds:
+    - CA
+    - O
+  - name: O
+    x: -2.185
+    y: 0.660
+    z: -0.784
+    bonds:
+    - C
+  - name: CB
+    x: -0.018
+    y: -0.986
+    z: 1.179
+    bonds:
+    - CA
+    - CG
+    - HB2
+    - HB3
+  - name: CG
+    x: 1.159
+    y: -1.939
+    z: 1.188
+    bonds:
+    - CB
+    - CD
+    - HG2
+    - HG3
+  - name: CD
+    x: 1.117
+    y: -2.896
+    z: 2.354
+    bonds:
+    - CG
+    - OE1
+    - NE2
+  - name: OE1
+    x: 0.214
+    y: -2.882
+    z: 3.191
+    bonds:
+    - CD
+  - name: NE2
+    x: 2.144
+    y: -3.752
+    z: 2.427
+    bonds:
+    - CD
+    - HE21
+    - HE22
+  - name: H
+    altname: HN
+    x: 1.201
+    y: 1.847
+    z: 0.000
+    bonds:
+    - N
+  - name: HA
+    x: 0.000
+    y: -0.533
+    z: -0.846
+    bonds:
+    - CA
+  - name: HB2
+    altname: 2HB
+    x: -0.007
+    y: -0.462
+    z: 2.030
+    bonds:
+    - CB
+  - name: HB3
+    altname: 1HB
+    altname: HB1
+    altname: 3HB
+    x: -0.860
+    y: -1.524
+    z: 1.129
+    bonds:
+    - CB
+  - name: HG2
+    altname: 2HG
+    x: 1.151
+    y: -2.468
+    z: 0.339
+    bonds:
+    - CG
+  - name: HG3
+    altname: 1HG
+    altname: HG1
+    altname: 3HG
+    x: 2.004
+    y: -1.406
+    z: 1.240
+    bonds:
+    - CG
+  - name: HE21
+    altname: 1HE2
+    x: 2.198
+    y: -4.425
+    z: 3.196
+    bonds:
+    - NE2
+  - name: HE22
+    altname: 2HE2
+    x: 2.860
+    y: -3.722
+    z: 1.713
+    bonds:
+    - NE2
+  dihedrals:
+  - [N, CA, CB, CG]
+  - [CA, CB, CG, CD]
+  - [CB, CG, CD, OE1]
+- name: GLU
+  atoms:
+  - name: N
+    x: 1.201
+    y: 0.847
+    z: 0.000
+    bonds:
+    - CA
+    - H
+  - name: CA
+    x: 0.000
+    y: 0.000
+    z: 0.000
+    bonds:
+    - N
+    - C
+    - CB
+    - HA
+  - name: C
+    x: -1.250
+    y: 0.881
+    z: 0.000
+    bonds:
+    - CA
+    - O
+  - name: O
+    x: -2.185
+    y: 0.660
+    z: -0.784
+    bonds:
+    - C
+  - name: CB
+    x: -0.059
+    y: -0.875
+    z: 1.258
+    bonds:
+    - CA
+    - CG
+    - HB2
+    - HB3
+  - name: CG
+    x: 1.082
+    y: -1.850
+    z: 1.501
+    bonds:
+    - CB
+    - CD
+    - HG2
+    - HG3
+  - name: CD
+    x: 0.990
+    y: -2.687
+    z: 2.740
+    bonds:
+    - CG
+    - OE1
+    - OE2
+  - name: OE1
+    x: 0.067
+    y: -2.624
+    z: 3.539
+    bonds:
+    - CD
+  - name: OE2
+    x: 1.970
+    y: -3.449
+    z: 2.871
+    bonds:
+    - CD
+  - name: H
+    altname: HN
+    x: 1.201
+    y: 1.847
+    z: 0.000
+    bonds:
+    - N
+  - name: HA
+    x: 0.000
+    y: -0.582
+    z: -0.813
+    bonds:
+    - CA
+  - name: HB2
+    altname: 2HB
+    x: -0.099
+    y: -0.260
+    z: 2.046
+    bonds:
+    - CB
+  - name: HB3
+    altname: 1HB
+    altname: HB1
+    altname: 3HB
+    x: -0.903
+    y: -1.409
+    z: 1.210
+    bonds:
+    - CB
+  - name: HG2
+    altname: 2HG
+    x: 1.124
+    y: -2.469
+    z: 0.717
+    bonds:
+    - CG
+  - name: HG3
+    altname: 1HG
+    altname: HG1
+    altname: 3HG
+    x: 1.929
+    y: -1.321
+    z: 1.553
+    bonds:
+    - CG
+  dihedrals:
+  - [N, CA, CB, CG]
+  - [CA, CB, CG, CD]
+  - [CB, CG, CD, OE1]
