@@ -128,7 +128,7 @@ FILTER_WARNINGS_LIMIT = 10
 TOPOLOGY_DEF_PATH = "TOPOLOGY.xml"
 
 #: Expected location for amino acid topology definition file
-AA_DEF_PATH = "AA.xml"
+AA_XML_PATH = "AA.xml"
 
 #: Expected location for nucleic acid topology definition file
 NA_DEF_PATH = "NA.xml"

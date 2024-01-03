@@ -15,7 +15,7 @@ from . import definitions as defns
 from .structures import Atom
 from .config import FORCE_FIELDS, TITLE_STR
 from .config import FILTER_WARNINGS_LIMIT, FILTER_WARNINGS
-from .config import AA_DEF_PATH, NA_DEF_PATH, PATCH_DEF_PATH
+from .config import AA_XML_PATH, NA_DEF_PATH, PATCH_DEF_PATH
 
 
 _LOGGER = logging.getLogger(__name__)
@@ -377,6 +377,18 @@ def test_for_file(name, type_):
     raise FileNotFoundError(err)
 
 
+def test_yaml_file(name):
+    """Test for the .yaml files that contains parameter definitions.
+
+    :param name:  the stem of the file
+    :type name:  str
+    :returns:  the path to the file
+    :rtype:  Path
+    :raises FileNotFoundError:  file not found
+    """
+    return test_for_file(name, "yaml")
+
+
 def test_names_file(name):
     """Test for the .names file that contains the XML mapping.
 
@@ -471,7 +483,7 @@ def get_molecule(input_path):
 
 
 def get_definitions(
-    aa_path=AA_DEF_PATH, na_path=NA_DEF_PATH, patch_path=PATCH_DEF_PATH
+    aa_path=AA_XML_PATH, na_path=NA_DEF_PATH, patch_path=PATCH_DEF_PATH
 ):
     """Load topology definition files.
 
