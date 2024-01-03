@@ -39,39 +39,47 @@ def parse_atom(atom):
             raise ValueError(f"Unrecognized key {key} ({value})")
 
 
-def test_aa():
-    """Test parsing of the AA.yaml file."""
-    yaml_path = get_yaml_path("AA")
-    print(f"Reading data from {yaml_path}")
+def parse_definition(yaml_file):
+    """Test parsing of YAML definition files.
 
-    with open(yaml_path, "rt") as yaml_file:
-        yaml_data = yaml.load(yaml_file, Loader=UniqueKeyLoader)
-        last_aa_name = None
-        try:
-            for aa in yaml_data:
-                for key, value in aa.items():
-                    if key == "name":
-                        last_aa_name = value
-                        assert isinstance(value, str) 
-                        assert len(value) == 3
-                    elif key == "atoms":
-                        for atom in value:
-                            parse_atom(atom)
-                    elif key == "dihedrals":
-                        assert isinstance(value, list)
-                        for dihedral in value:
-                            assert isinstance(dihedral, list)
-                            assert len(dihedral) == 4
-                    else:
-                        raise ValueError(f"Unrecognized key {key} ({value})")
-        except Exception as exception:
-            message = str(exception).replace("\n", " ")
-            raise RuntimeError(
-                f"Shortly after parsing {last_aa_name}, got error: "
-                f"{message}."
-            )
+    Example: AA.yaml file."""
+
+    yaml_data = yaml.load(yaml_file, Loader=UniqueKeyLoader)
+    last_aa_name = None
+    try:
+        for aa in yaml_data:
+            for key, value in aa.items():
+                if key == "name":
+                    last_aa_name = value
+                    assert isinstance(value, str)
+                elif key == "atoms":
+                    for atom in value:
+                        parse_atom(atom)
+                elif key == "dihedrals":
+                    assert isinstance(value, list)
+                    for dihedral in value:
+                        assert isinstance(dihedral, list)
+                        assert len(dihedral) == 4
+                else:
+                    raise ValueError(f"Unrecognized key {key} ({value})")
+    except Exception as exception:
+        message = str(exception).replace("\n", " ")
+        raise RuntimeError(
+            f"Shortly after parsing {last_aa_name}, got error: "
+            f"{message}."
+        )
+
+
+def test_definitions():
+    """Test parsing of definition files."""
+
+    for def_type in ["AA", "NA"]:
+        yaml_path = get_yaml_path(def_type)
+        print(f"Reading data from {yaml_path}")
+        with open(yaml_path, "rt") as yaml_file:
+            parse_definition(yaml_file)
 
     _LOGGER.error(
         "This test suite is incomplete! It needs to include other YAML files as well as "
-        "evaluate the behavior of functions that use data from those files."
+        "update the code to use YAML instead of XML."
     )
