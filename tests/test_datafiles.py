@@ -19,7 +19,7 @@ class UniqueKeyLoader(yaml.SafeLoader):
         mapping = set()
         for key_node, value_node in node.value:
             if ':merge' in key_node.tag:
-                continue 
+                continue
             key = self.construct_object(key_node, deep=deep)
             if key in mapping:
                 raise ValueError(f"Duplicate {key!r} key found in YAML.")
@@ -87,7 +87,7 @@ def test_definition(def_path):
     "param_path",
     [
         "amber_parameters", "charmm_parameters", "parse_parameters",
-        "peoepb_parameters", "swanson_parameters"
+        "peoepb_parameters", "swanson_parameters", "tyl06_parameters"
     ]
 )
 def test_parameter(param_path):
