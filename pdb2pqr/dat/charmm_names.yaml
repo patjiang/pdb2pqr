@@ -1,0 +1,152 @@
+- pattern: WAT
+  new residue name: TP3M
+  atoms:
+  - original name: O
+    new name: OH2
+- pattern: "[NC]?...$"
+  atoms:
+  - original name: H
+    new name: HN
+  - original name: HA3
+    new name: HA1
+  - original name: HG3
+    new name: HG1
+  - original name: HG
+    new name: HG1
+- pattern: "[NC]?(?!ALA$)...$"
+  exclude: ALA
+  atoms:
+  - original name: HB3
+    new name: HB1
+- pattern: "[NC]?(?!ILE$)...$"
+  atoms:   
+  - original name: HD3
+    new name: HD1
+- pattern: "[NC]?(?!MET$|TRP$)...$"
+  atoms:   
+  - original name: HE3
+    new name: HE1
+- pattern: ASH
+  new residue name: ASP
+- pattern: ASH
+  new residue name: ASPP
+  atoms:
+  - original name: HD1
+    new name: HD2
+- pattern: GLH
+  new residue name: GLU
+- pattern: GLH
+  new residue name: GLUP
+  atoms:
+  - original name: HE1
+    new name: HE2
+- pattern: ILE
+  atoms:
+  - original name: CD1
+    new name: CD
+  - original name: HD11
+    new name: HD1
+  - original name: HD12
+    new name: HD2
+  - original name: HD13
+    new name: HD3
+  - original name: HG13
+    new name: HG11
+- pattern: CYX
+  new residue name: CYS
+- pattern: CYX
+  new residue name: DISU
+  atoms:
+  - original name: CB
+    new name: 1CB
+  - original name: SG
+    new name: 1SG
+- pattern: "HI([PDE])$"
+  new residue name: HS$group
+- pattern: C(...)$
+  new residue name: $group
+- pattern: C...$
+  new residue name: CTER
+  atoms:
+  - original name: O
+    new name: OT1
+  - original name: OXT
+    new name: OT2
+- pattern: N(...)$
+  new residue name: $group
+- pattern: N(?!GLY$|PRO$)...$
+  new residue name: NTER
+  atoms:
+  - original name: H
+    new name: HT1
+  - original name: H2
+    new name: HT2
+  - original name: H3
+    new name: HT3
+- pattern: NGLY
+  new residue name: GLYP
+  atoms:
+  - original name: H
+    new name: HT1
+  - original name: H2
+    new name: HT2
+  - original name: H3
+    new name: HT3
+- pattern: NPRO
+  new residue name: PROP
+  atoms:
+  - original name: H
+    new name: HN1
+  - original name: H2
+    new name: HN2
+- pattern: "[RD]A[35]?$"
+  new residue name: ADE
+  atoms:
+  - original name: OP1
+    new name: O1P
+  - original name: OP2
+    new name: O2P
+- pattern: "[RD]C[35]?$"
+  new residue name: CYT
+  atoms:
+  - original name: OP1
+    new name: O1P
+  - original name: OP2
+    new name: O2P
+- pattern: "[RD]G[35]?$"
+  new residue name: GUA
+  atoms:
+  - original name: OP1
+    new name: O1P
+  - original name: OP2
+    new name: O2P
+- pattern: DT[35]?$
+  new residue name: THY
+  atoms:
+  - original name: OP1
+    new name: O1P
+  - original name: OP2
+    new name: O2P
+- pattern: "RU[35]?$"
+  new residue name: URA
+  atoms:
+  - original name: OP1
+    new name: O1P
+  - original name: OP2
+    new name: O2P
+- pattern: "D[ACGT][35]?$"
+  new residue name: DEO1
+- pattern: "[RD][ACGTU]3$"
+  new residue name: 3TER
+- pattern: "[RD][ACGTU]5$"
+  new residue name: 5TER
+- pattern: "DT[35]?$"
+  atoms:
+  - original name: C7
+    new name: C5M
+  - original name: H71
+    new name: H51
+  - original name: H72
+    new name: H52
+  - original name: H73
+    new name: H53

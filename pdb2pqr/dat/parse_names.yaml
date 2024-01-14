@@ -1,0 +1,124 @@
+- pattern: WAT
+  new residue name: H2O
+  atoms:
+  - original name: O
+    new name: OH
+  - original name: H1
+    new name: HH1
+  - original name: H2
+    new name: HH2
+- pattern: "[NC]?...$"
+  atoms:
+  - original name: H
+    new name: HN
+  - original name: HA3
+    new name: HA1
+- pattern: "[NC]?(?!ALA$)...$"
+  atoms:   
+  - original name: HB3
+    new name: HB1
+- pattern: "[NC]?(?!ILE$|VAL$)...$"
+  atoms:   
+  - original name: HG3
+    new name: HG1
+- pattern: "[NC]?(?!ILE$|LEU$)...$"
+  atoms:   
+  - original name: HD3
+    new name: HD1
+- pattern: "[NC]?(?!MET$|TRP$)...$"
+  atoms:   
+  - original name: HE3
+    new name: HE1
+- pattern: ASH
+  new residue name: AS0
+  atoms:
+  - original name: HD1
+    new name: HD2
+- pattern: CYX
+  new residue name: CSS
+- pattern: CYM
+  new residue name: CY-
+- pattern: GLH
+  new residue name: GL0
+  atoms:
+  - original name: HE1
+    new name: HE2
+- pattern: HIE
+  new residue name: HIS
+- pattern: HIP
+  new residue name: HI+
+- pattern: ILE
+  atoms:   
+  - original name: HG13
+    new name: HG11
+- pattern: LYN
+  new residue name: LY0
+- pattern: TYM
+  new residue name: TY-
+- pattern: C(...)$
+  new residue name: $group
+- pattern: C(?!PRO$)...$
+  new residue name: BK-
+  atoms:
+  - original name: O
+    new name: O1
+  - original name: OXT
+    new name: O2
+- pattern: N(...)$
+  new residue name: $group
+- pattern: N(?!PRO$)...$
+  new residue name: BK+
+  atoms:
+  - original name: H
+    new name: H1
+- pattern: NEUTRAL-C(...)$
+  new residue name: $group
+- pattern: NEUTRAL-C(...)$
+  new residue name: BKC
+  atoms:
+  - original name: O
+    new name: O2
+  - original name: HO
+    new name: H2
+  - original name: OXT
+    new name: O1
+- pattern: NEUTRAL-N(...)$
+  new residue name: $group
+- pattern: NEUTRAL-N(...)$
+  new residue name: BKN
+  atoms:
+  - original name: H
+    new name: H1
+- pattern: NPRO
+  new residue name: PR+
+  atoms:
+  - original name: H
+    new name: HN1
+  - original name: H2
+    new name: HN2
+- pattern: CPRO
+  new residue name: PR-
+- pattern: "[RD][ACGTU][35]?$"
+  atoms:
+  - original name: H5'
+    new name: H5'1
+  - original name: H5''
+    new name: H5'2
+  - original name: H2'
+    new name: H2'1
+- pattern: "D[ACGT][35]?$"
+  atoms:
+  - original name: H2''
+    new name: H2'2
+  - original name: OP1
+    new name: O1P
+  - original name: OP2
+    new name: O2P
+- pattern: "R[ACGU][35]?$"
+  atoms:
+  - original name: H2''
+    new name: HO'2
+  - original name: OP1
+    new name: O1P
+  - original name: OP2
+    new name: O2P

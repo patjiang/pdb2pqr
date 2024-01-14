@@ -2,6 +2,7 @@
 import yaml
 import logging
 import pytest
+import re
 import pandas as pd
 from pdb2pqr.io import test_yaml_file as get_yaml_path
 from pdb2pqr.io import test_csv_file as get_csv_path
@@ -27,7 +28,7 @@ class UniqueKeyLoader(yaml.SafeLoader):
         return super().construct_mapping(node, deep)
 
 
-def parse_atom(atom):
+def parse_definition_atom(atom):
     """Test atom syntax."""
     for key, value in atom.items():
         if key == "name":
@@ -43,21 +44,19 @@ def parse_atom(atom):
 
 
 def parse_definition(yaml_file):
-    """Test parsing of YAML definition files.
-
-    Example: AA.yaml file."""
+    """Test parsing of YAML definition files."""
 
     yaml_data = yaml.load(yaml_file, Loader=UniqueKeyLoader)
-    last_aa_name = None
+    last_residue_name = None
     try:
-        for aa in yaml_data:
-            for key, value in aa.items():
+        for residue in yaml_data:
+            for key, value in residue.items():
                 if key == "name":
-                    last_aa_name = value
+                    last_residue_name = value
                     assert isinstance(value, str)
                 elif key == "atoms":
                     for atom in value:
-                        parse_atom(atom)
+                        parse_definition_atom(atom)
                 elif key == "dihedrals":
                     assert isinstance(value, list)
                     for dihedral in value:
@@ -68,9 +67,46 @@ def parse_definition(yaml_file):
     except Exception as exception:
         message = str(exception).replace("\n", " ")
         raise RuntimeError(
-            f"Shortly after parsing {last_aa_name}, got error: "
+            f"Shortly after parsing {last_residue_name}, got error: "
             f"{message}."
         )
+
+
+def parse_name_atom(atom):
+    """Parse atom entry from names file."""
+    for key, value in atom.items():
+        if key == "original name":
+            re.compile(value)
+        elif key == "new name":
+            assert isinstance(value, str)
+        else:
+            raise ValueError(f"Unknown entry: {key}, {value}")
+
+
+def parse_name(yaml_file):
+    """Test parsing of YAML renaming files."""
+    yaml_data = yaml.load(yaml_file, Loader=UniqueKeyLoader)
+    for pattern in yaml_data:
+        for key, value in pattern.items():
+            if key == "pattern":
+                re.compile(value)
+            elif key == "atoms":
+                for atom in value:
+                    parse_name_atom(atom)
+            elif key in ["new residue name", "exclude"]:
+                assert isinstance(value, str)
+            else:
+                raise ValueError(f"Unknown entry: {key}: {value}")
+
+
+@pytest.mark.parametrize("name_path", ["amber_names", "charmm_names", "parse_names"])
+def test_name(name_path):
+    """Test parsing of renaming files."""
+
+    yaml_path = get_yaml_path(name_path)
+    print(f"Reading data from {yaml_path}")
+    with open(yaml_path, "rt") as yaml_file:
+        parse_name(yaml_file)
 
 
 @pytest.mark.parametrize("def_path", ["aa_definitions", "na_definitions"])
@@ -115,7 +151,7 @@ def test_parameter(param_path):
             _LOGGER.error(f"Got {error} while processing {index} and {value}")
 
 
-def test_last():
+def test_zzz():
     """This is a bogus test designed to fail."""
 
     raise Exception(
