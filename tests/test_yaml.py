@@ -73,13 +73,17 @@ def parse_definition(yaml_file):
 def test_definitions():
     """Test parsing of definition files."""
 
-    for def_type in ["AA", "NA"]:
-        yaml_path = get_yaml_path(def_type)
+    for def_path in ["aa_definitions", "na_definitions"]:
+        yaml_path = get_yaml_path(def_path)
         print(f"Reading data from {yaml_path}")
         with open(yaml_path, "rt") as yaml_file:
             parse_definition(yaml_file)
 
-    _LOGGER.error(
+
+def last_test():
+    """This is a bogus test designed to fail."""
+
+    raise Exception(
         "This test suite is incomplete! It needs to include other YAML files as well as "
         "update the code to use YAML instead of XML."
     )
