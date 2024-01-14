@@ -2,7 +2,9 @@
 import yaml
 import logging
 import pytest
+import pandas as pd
 from pdb2pqr.io import test_yaml_file as get_yaml_path
+from pdb2pqr.io import test_csv_file as get_csv_path
 
 
 _LOGGER = logging.getLogger(__name__)
@@ -70,6 +72,7 @@ def parse_definition(yaml_file):
             f"{message}."
         )
 
+
 @pytest.mark.parametrize("def_path", ["aa_definitions", "na_definitions"])
 def test_definition(def_path):
     """Test parsing of definition files."""
@@ -80,10 +83,42 @@ def test_definition(def_path):
         parse_definition(yaml_file)
 
 
+@pytest.mark.parametrize(
+    "param_path",
+    [
+        "amber_parameters", "charmm_parameters", "parse_parameters",
+        "peoepb_parameters", "swanson_parameters"
+    ]
+)
+def test_parameter(param_path):
+    """Test parameter parsing."""
+    csv_path = get_csv_path(param_path)
+    param_data = pd.read_csv(
+        csv_path,
+        dtype={
+            "residue name": str, "atom name": str, "atom type": str,
+            "source": str, "citation": str, "charge": float, "radius": float
+        }
+    )
+    for index, value in param_data.dtypes.items():
+        try:
+            if index in [
+                "residue name", "atom name", "atom type", "source",
+                "citation"
+            ]:
+                assert value.kind == "O"
+            elif index in ["charge", "radius"]:
+                assert value.kind == "f"
+            else:
+                raise ValueError(index)
+        except AssertionError as error:
+            _LOGGER.error(f"Got {error} while processing {index} and {value}")
+
+
 def test_last():
     """This is a bogus test designed to fail."""
 
     raise Exception(
-        "This test suite is incomplete! It needs to include other YAML files as well as "
-        "update the code to use YAML instead of XML."
+        "This test suite is incomplete! It needs to include other YAML files "
+        "as well as update the code to use YAML instead of XML."
     )

@@ -401,16 +401,16 @@ def test_names_file(name):
     return test_for_file(name, "NAMES")
 
 
-def test_dat_file(name):
-    """Test for the forcefield file with a few name permutations.
+def test_csv_file(name):
+    """Test for the CSV (parameter) file with a few name permutations.
 
-    :param name:  the name of the dat file
+    :param name:  the name of the CSV file
     :type name:  str
     :returns:  the path to the file
     :rtype:  Path
     :raises FileNotFoundError:  file not found
     """
-    return test_for_file(name, "DAT")
+    return test_for_file(name, "CSV")
 
 
 def test_xml_file(name):
