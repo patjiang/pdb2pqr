@@ -1,6 +1,7 @@
 """Test behavior of YAML-format input files."""
 import yaml
 import logging
+import pytest
 from pdb2pqr.io import test_yaml_file as get_yaml_path
 
 
@@ -69,18 +70,17 @@ def parse_definition(yaml_file):
             f"{message}."
         )
 
-
-def test_definitions():
+@pytest.mark.parametrize("def_path", ["aa_definitions", "na_definitions"])
+def test_definition(def_path):
     """Test parsing of definition files."""
 
-    for def_path in ["aa_definitions", "na_definitions"]:
-        yaml_path = get_yaml_path(def_path)
-        print(f"Reading data from {yaml_path}")
-        with open(yaml_path, "rt") as yaml_file:
-            parse_definition(yaml_file)
+    yaml_path = get_yaml_path(def_path)
+    print(f"Reading data from {yaml_path}")
+    with open(yaml_path, "rt") as yaml_file:
+        parse_definition(yaml_file)
 
 
-def last_test():
+def test_last():
     """This is a bogus test designed to fail."""
 
     raise Exception(
