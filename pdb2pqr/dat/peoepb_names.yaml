@@ -1,0 +1,35 @@
+- pattern: WAT
+  atoms:
+  - original name: O
+    new name: OW
+  - original name: H1
+    new name: HW
+  - original name: H2
+    new name: HW
+- pattern: "[NC]?...$"
+  atoms:
+  - original name: H
+    new name: HN
+  - original name: HA3
+    new name: HA1
+  - original name: HG3
+    new name: HG1
+  - original name: HG
+    new name: HG1
+- pattern: "[NC]?(?!ALA$)...$"
+  exclude: ALA
+  atoms:   
+  - original name: HB3
+    new name: HB1
+- pattern: "[NC]?(?!ILE$)...$"
+  atoms:   
+  - original name: HD3
+    new name: HD1
+- pattern: "[NC]?(?!MET$|TRP$)...$"
+  atoms:   
+  - original name: HE3
+    new name: HE1
+- pattern: N...$
+  atoms:
+  - original name: H
+    new name: H1

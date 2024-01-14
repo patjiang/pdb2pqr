@@ -1,0 +1,32 @@
+- pattern: WAT
+  atoms:
+  - original name: O
+    new name: OW
+  - original name: H1
+    new name: HW
+  - original name: H2
+    new name: HW
+- pattern: CYM
+  atoms:
+  - original name: H
+    new name: HN
+- pattern: LYN 
+  atoms:   
+  - original name: HZ1
+    new name: HZ3
+- pattern: N...$
+  atoms:
+  - original name: H
+    new name: H1
+- pattern: NCYS
+  atoms:
+  - original name: HG
+    new name: HSG
+- pattern: CCYS 
+  atoms:
+  - original name: HG
+    new name: HSG
+- pattern: NPRO
+  atoms:
+  - original name: H
+    new name: H3

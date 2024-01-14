@@ -1,0 +1,48 @@
+- pattern: WAT
+  atoms:
+  - original name: O
+    new name: OW
+  - original name: H1
+    new name: HW
+  - original name: H2
+    new name: HW
+- pattern: CYM
+  atoms:
+  - original name: H
+    new name: HN
+- pattern: LYN 
+  atoms:   
+  - original name: HZ1
+    new name: HZ3
+- pattern: N...$
+  atoms:
+  - original name: H
+    new name: H1
+- pattern: NPRO
+  atoms:
+  - original name: H
+    new name: H3
+- pattern: "[RD][ACGTU][35]?$"
+  atoms:
+  - original name: H5'
+    new name: H5'1
+  - original name: H5''
+    new name: H5'2
+  - original name: H2'
+    new name: H2'1
+- pattern: "D[ACGT][35]?$"
+  atoms:
+  - original name: H2''
+    new name: H2'2
+  - original name: OP1
+    new name: O1P
+  - original name: OP2
+    new name: O2P
+- pattern: "R[ACGU][35]?$"
+  atoms:
+  - original name: H2''
+    new name: HO'2
+  - original name: OP1
+    new name: O1P
+  - original name: OP2
+    new name: O2P

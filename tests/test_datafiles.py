@@ -99,7 +99,13 @@ def parse_name(yaml_file):
                 raise ValueError(f"Unknown entry: {key}: {value}")
 
 
-@pytest.mark.parametrize("name_path", ["amber_names", "charmm_names", "parse_names"])
+@pytest.mark.parametrize(
+    "name_path",
+    [
+        "amber_names", "charmm_names", "parse_names", "peoepb_names",
+        "swanson_names", "tyl06_names"
+    ]
+)
 def test_name(name_path):
     """Test parsing of renaming files."""
 
