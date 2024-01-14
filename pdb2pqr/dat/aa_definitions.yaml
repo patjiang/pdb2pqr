@@ -1,5 +1,5 @@
 # This is a definition file for amino acid (and water) structures.
-# This flie is part of PDB2PQR.
+# This file is part of PDB2PQR.
 # See https://www.poissonboltzmann.org/ for more information about use and redistribution.
 - name: ALA
   atoms:
