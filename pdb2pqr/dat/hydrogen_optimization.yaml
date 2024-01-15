@@ -1,0 +1,65 @@
+# This file provides rules for hydrogen optimization.
+# This file is part of PDB2PQR.
+# See https://www.poissonboltzmann.org/ for more information about use and redistribution.
+- name: HIS
+  type: Flip
+  angle: [CA, CB, CG, ND1]
+  atoms:
+  - name: HD1
+  - name: HD2
+  - name: HE1
+  - name: HE2
+- name: ASN
+  type: Flip
+  angle: [CA, CB, CG, OD1]
+  atoms:
+  - name: HD21
+  - name: HD22
+- name: GLN
+  type: Flip
+  angle: [CB, CG, CD, OE1]
+  atoms:
+  - name: HE21
+  - name: HE22
+- name: ASH
+  type: Carboxylic
+  angle: [CA, CB, CG, OD1]
+  atoms:
+  - name: HD2
+    bond: OD2
+  - name: HD1
+    bond: OD1
+- name: GLH
+  type: Carboxylic
+  angle: [CB, CG, CD, OE1]
+  atoms:
+  - name: HE2
+    bond: OE2
+  - name: HE1
+    bond: OE1
+- name: CYS
+  type: Alcoholic
+  atoms:
+  - name: HG
+- name: SER
+  type: Alcoholic
+  atoms:
+  - name: HG
+- name: THR
+  type: Alcoholic
+  atoms:
+  - name: HG1
+- name: TYR
+  type: Alcoholic
+  atoms:
+  - name: HH
+- name: WAT
+  type: Water
+- name: ARG
+  type: Generic
+- name: LYS
+  type: Generic
+- name: NTR
+  type: Generic
+- name: CTR
+  type: Carboxylic

@@ -9,6 +9,7 @@ from pdb2pqr.io import test_csv_file as get_csv_path
 
 
 _LOGGER = logging.getLogger(__name__)
+OPT_TYPES = {"Flip", "Carboxylic", "Alcoholic", "Water", "Generic"}
 
 
 class UniqueKeyLoader(yaml.SafeLoader):
@@ -97,6 +98,37 @@ def parse_name(yaml_file):
                 assert isinstance(value, str)
             else:
                 raise ValueError(f"Unknown entry: {key}: {value}")
+
+
+@pytest.mark.parametrize("path", ["hydrogen_optimization.yaml"])
+def test_hydrogen(path):
+    """Test the hydrogen optimization file at path."""
+    yaml_path = get_yaml_path(path)
+    print(f"Reading data from {yaml_path}")
+    with open(yaml_path, "rt") as yaml_file:
+        yaml_data = yaml.load(yaml_file, Loader=UniqueKeyLoader)
+        for residue in yaml_data:
+            for key, value in residue.items():
+                if key == "name":
+                    assert isinstance(key, str)
+                elif key == "type":
+                    if value not in OPT_TYPES:
+                        raise ValueError(f"Unknown optimization type: {value}")
+                elif key == "angle":
+                    assert isinstance(value, list)
+                    assert len(value) == 4
+                elif key == "atoms":
+                    for atom in value:
+                        for atom_key, atom_value in atom.items():
+                            if atom_key in ["name", "bond"]:
+                                assert isinstance(atom_value, str)
+                            else:
+                                raise ValueError(
+                                    f"Unknown atom "
+                                    f"attribute: {atom_key}"
+                                )
+                else:
+                    raise ValueError(f"Unknown entry: {key}: {value}")
 
 
 @pytest.mark.parametrize(
