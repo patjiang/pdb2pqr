@@ -413,18 +413,6 @@ def test_csv_file(name):
     return test_for_file(name, "CSV")
 
 
-def test_xml_file(name):
-    """Test for the XML file with a few name permutations.
-
-    :param name:  the name of the dat file
-    :type name:  str
-    :returns:  the path to the file
-    :rtype:  Path
-    :raises FileNotFoundError:  file not found
-    """
-    return test_for_file(name, "xml")
-
-
 def get_pdb_file(name):
     """Obtain a PDB file.
 
