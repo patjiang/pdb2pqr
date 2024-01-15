@@ -484,12 +484,12 @@ def get_definitions(
     :return:  topology Definitions object.
     :rtype:  Definition
     """
-    aa_path_ = test_xml_file(aa_path)
-    na_path_ = test_xml_file(na_path)
-    patch_path_ = test_xml_file(patch_path)
-    with open(aa_path_, "rt") as aa_file:
-        with open(na_path_, "rt") as na_file:
-            with open(patch_path_, "rt") as patch_file:
+    raise NotImplementedError(f"Change the test for {aa_path} to YAML.")
+    raise NotImplementedError(f"Change the test for {na_path} to YAML.")
+    raise NotImplementedError(f"Change the test for {patch_path} to YAML.")
+    with open(aa_path, "rt") as aa_file:
+        with open(na_path, "rt") as na_file:
+            with open(patch_path, "rt") as patch_file:
                 definitions = defns.Definition(
                     aa_file=aa_file, na_file=na_file, patch_file=patch_file
                 )
