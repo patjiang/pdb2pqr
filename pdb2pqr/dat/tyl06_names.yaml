@@ -1,3 +1,6 @@
+# This is a name matching file.
+# This file is part of PDB2PQR.
+# See https://www.poissonboltzmann.org/ for more information about use and redistribution.
 - pattern: WAT
   atoms:
   - original name: O
