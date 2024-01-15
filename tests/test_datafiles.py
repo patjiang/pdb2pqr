@@ -100,11 +100,48 @@ def parse_name(yaml_file):
                 raise ValueError(f"Unknown entry: {key}: {value}")
 
 
+def parse_patch_atom(atom):
+    """Test parsing of patch file atoms."""
+    for key, value in atom.items():
+        if key == "atom name":
+            assert isinstance(value, str)
+        elif key in ["x", "y", "z"]:
+            assert isinstance(value, float)
+        elif key in ["altnames", "bonds"]:
+            assert isinstance(value, list)
+            for bond in value:
+                assert isinstance(bond, str)
+        elif key == "dihedrals":
+            for atom_list in value:
+                assert len(atom_list) == 4
+                for atom in atom_list:
+                    assert isinstance(atom, str)
+        else:
+            raise ValueError(f"Invalid entry: {key} {value}")
+
+
+@pytest.mark.parametrize("path", ["patches.yaml"])
+def test_patches(path):
+    """Test parsing of YAML patch files."""
+    yaml_path = get_yaml_path(path)
+    with open(yaml_path, "rt") as yaml_file:
+        yaml_data = yaml.load(yaml_file, Loader=UniqueKeyLoader)
+        for patch in yaml_data:
+            for key, value in patch.items():
+                # TODO - pattern is not currently a proper regex
+                if key in ["name", "pattern", "new name"]:
+                    assert isinstance(key, str)
+                elif key in ["add atoms", "remove atoms"]:
+                    for atom in value:
+                        parse_patch_atom(atom)
+                else:
+                    raise ValueError(f"Unrecognized key: {key}: {value}")
+
+
 @pytest.mark.parametrize("path", ["hydrogen_optimization.yaml"])
 def test_hydrogen(path):
     """Test the hydrogen optimization file at path."""
     yaml_path = get_yaml_path(path)
-    print(f"Reading data from {yaml_path}")
     with open(yaml_path, "rt") as yaml_file:
         yaml_data = yaml.load(yaml_file, Loader=UniqueKeyLoader)
         for residue in yaml_data:

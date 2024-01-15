@@ -1,0 +1,450 @@
+# This file specifies how to add or remove atoms in residues based on missing atoms or
+# changes in titration states.
+# This file is part of PDB2PQR.
+# See https://www.poissonboltzmann.org/ for more information about use and redistribution.
+- name: PEPTIDE
+  pattern: "*"
+  add atoms:
+  - atom name: N+1
+    x: -1.252
+    y: 1.877
+    z: 1.023
+    bonds: [C]
+  - atom name: C-1
+    x: 2.339
+    y: 0.216
+    z: 0.000
+    bonds: [N]
+- name: ASH
+  pattern: ASP
+  add atoms:
+  - atom name: HD2
+    altnames:
+    - 2HD
+    x: 2.105
+    y: -3.427
+    z: 1.930
+    bonds: [OD2]
+  - atom name: HD1
+    altnames:
+    - 1HD
+    x: 2.850
+    y: -2.463
+    z: 0.072
+    bonds: [OD1]
+    dihedrals:
+    - [CB, CG, OD2, HD2]
+    - [CB, CG, OD1, HD1]
+- name: CYM
+  pattern: CYS
+  remove atoms:
+  - atom name: HG
+- name: CYX
+  pattern: CYS
+  remove atoms:
+  - atom name: HG
+- name: GLH
+  pattern: GLU
+  add atoms:
+  - atom name: HE2
+    altnames:
+    - 2HE
+    x: 1.977
+    y: -4.036
+    z: 3.680
+    bonds: [OE2]
+  - atom name: HE1
+    altnames:
+    - 1HE
+    x: 0.036
+    y: -3.194
+    z: 4.361
+    bonds: [OE1]
+    dihedrals:
+    - [CG, CD, OE1, HE1]
+    - [CG, CD, OE2, HE2]
+- name: HSE
+  pattern: HIS
+  remove atoms:
+  - atom name: HD1
+- name: HSD
+  pattern: HIS
+  remove atoms:
+  - atom name: HE2
+- name: HSP
+  pattern: HIS
+- name: HID
+  pattern: HIS
+  remove atoms:
+  - atom name: HE2
+- name: HIE
+  pattern: HIS
+  remove atoms:
+  - atom name: HD1
+- name: HIP
+  pattern: HIS
+- name: AR0
+  pattern: ARG
+  remove atoms:
+  - atom name: HE
+- name: LYN
+  pattern: LYS
+  remove atoms:
+  - atom name: HZ3
+- name: TYM
+  pattern: TYR
+  remove atoms:
+  - atom name: HH
+- name: CTERM
+  pattern: "..[^35]$"
+  new name: C*
+  add atoms:
+  - atom name: OXT
+    altnames:
+    - O''
+    - OT2
+    x: -1.529
+    y: 1.858
+    z: 0.695
+    bonds: [C]
+  - atom name: O
+    altnames:
+    - O'
+    - OT1
+    x: -2.185
+    y: 0.660
+    z: -0.784
+    bonds: [C]
+  - atom name: C-1
+    x: 2.339
+    y: 0.216
+    z: 0.000
+    bonds: [N]
+- name: NEUTRAL-CTERM
+  pattern: "..[^35]$"
+  new name: NEUTRAL-C*
+  add atoms:
+  - atom name: OXT
+    altnames:
+    - O''
+    - OT2
+    x: -1.529
+    y: 1.858
+    z: 0.695
+    bonds: [C]
+  - atom name: O
+    altnames:
+    - O'
+    - OT1
+    x: -2.185
+    y: 0.660
+    z: -0.784
+    bonds: [C]
+  - atom name: HO
+    x: -2.998
+    y: 1.241
+    z: -0.768
+    bonds: [O]
+  - atom name: C-1
+    x: 2.339
+    y: 0.216
+    z: 0.000
+    bonds: [N]
+- name: NTERM
+  pattern: "..[^35]$"
+  new name: N*
+  add atoms:
+  - atom name: H
+    altnames:
+    - HT1
+    - H1
+    - 1H
+    x: 0.934
+    y: 1.811
+    z: 0.000
+    bonds: [N]
+  - atom name: H2
+    altnames:
+    - HT2
+    - 2H
+    x: 1.746
+    y: 0.653
+    z: -0.817
+    bonds: [N]
+  - atom name: H3
+    altnames:
+    - HT3
+    - 3H
+    x: 1.746
+    y: 0.653
+    z: 0.817
+    bonds: [N]
+  - atom name: N+1
+    x: -1.252
+    y: 1.877
+    z: 1.023
+    bonds: [C]
+- name: NEUTRAL-NTERM
+  pattern: "..[^35]$"
+  new name: NEUTRAL-N*
+  add atoms:
+  - atom name: H
+    altnames:
+    - HT1
+    - H1
+    - 1H
+    x: 0.934
+    y: 1.811
+    z: 0.000
+    bonds: [N]
+  - atom name: H2
+    altnames:
+    - HT2
+    - 2H
+    x: 1.746
+    y: 0.653
+    z: -0.817
+    bonds: [N]
+  - atom name: N+1
+    x: -1.252
+    y: 1.877
+    z: 1.023
+    bonds: [C]
+  remove atoms:
+  - atom name: H3
+- name: HOH
+  pattern: WAT
+- name: DA
+  pattern: RA
+  add atoms:
+  - atom name: C2'
+    x: 5.230443
+    y: 2.095696
+    z: 2.779425
+    bonds: [C1', C3', H2', H2'']
+  - atom name: H2''
+    altnames:
+    - HO'2
+    - H2'2
+    x: 6.025106
+    y: 2.060820
+    z: 3.524673
+    bonds: [C2']
+  remove atoms:
+  - atom name: O2'
+- name: DA3
+  pattern: DA
+  add atoms:
+  - atom name: H3T
+    x: 5.911984
+    y: 4.450161 
+    z: 3.797897
+    bonds: [O3']
+- name: DA5
+  pattern: DA
+  remove atoms:
+  - atom name: O1P
+  - atom name: P
+  - atom name: O2P
+  add atoms:
+  - atom name: H5T
+    x: 2.5858
+    y: 1.9226
+    z: 0.0818
+    bonds: [O5']
+- name: RA3
+  pattern: RA
+  add atoms:
+  - atom name: H3T
+    x: 5.911984
+    y: 4.450161 
+    z: 3.797897
+    bonds: [O3']
+- name: RA5
+  pattern: RA
+  remove atoms:
+  - atom name: O1P
+  - atom name: P
+  - atom name: O2P
+  add atoms:
+  - atom name: H5T
+    x: 2.5858
+    y: 1.9226
+    z: 0.0818
+    bonds: [O5']
+- name: DC
+  pattern: RC
+  add atoms:
+  - atom name: C2'
+    x: 5.230443
+    y: 2.095696
+    z: 2.779425
+    bonds: [C1', C3', H2', H2'']
+  - atom name: H2''
+    altnames:
+    - HO'2
+    - H2'2
+    x: 6.025106
+    y: 2.060820
+    z: 3.524673
+    bonds: [C2']
+  remove atoms:
+  - atom name: O2'
+- name: DC3
+  pattern: DC
+  add atoms:
+  - atom name: H3T
+    x: 5.911984
+    y: 4.450161 
+    z: 3.797897
+    bonds: [O3']
+- name: DC5
+  pattern: DC
+  remove atoms:
+  - atom name: O1P
+  - atom name: P
+  - atom name: O2P
+  add atoms:
+  - atom name: H5T
+    x: 2.5858
+    y: 1.9226
+    z: 0.0818
+    bonds: [O5']
+- name: RC3
+  pattern: RC
+  add atoms:
+  - atom name: H3T
+    x: 5.911984
+    y: 4.450161 
+    z: 3.797897
+    bonds: [O3']
+- name: RC5
+  pattern: RC
+  remove atoms:
+  - atom name: O1P
+  - atom name: P
+  - atom name: O2P
+  add atoms:
+  - atom name: H5T
+    x: 2.5858
+    y: 1.9226
+    z: 0.0818
+    bonds: [O5']
+- name: DG
+  pattern: RG
+  add atoms:
+  - atom name: C2'
+    x: 5.230443
+    y: 2.095696
+    z: 2.779425
+    bonds: [C1', C3', H2', H2'']
+  - atom name: H2''
+    altnames:
+    - HO'2
+    - H2'2
+    x: 6.025106
+    y: 2.060820
+    z: 3.524673
+    bonds: [C2']
+  remove atoms:
+  - atom name: O2'
+- name: DG3
+  pattern: DG
+  add atoms:
+  - atom name: H3T
+    x: 5.911984
+    y: 4.450161 
+    z: 3.797897
+    bonds: [O3']
+- name: DG5
+  pattern: DG
+  remove atoms:
+  - atom name: O1P
+  - atom name: P
+  - atom name: O2P
+  add atoms:
+  - atom name: H5T
+    x: 2.5858
+    y: 1.9226
+    z: 0.0818
+    bonds: [O5']
+- name: RG3
+  pattern: RG
+  add atoms:
+  - atom name: H3T
+    x: 5.911984
+    y: 4.450161 
+    z: 3.797897
+    bonds: [O3']
+- name: RG5
+  pattern: RG
+  remove atoms:
+  - atom name: O1P
+  - atom name: P
+  - atom name: O2P
+  add atoms:
+  - atom name: H5T
+    x: 2.5858
+    y: 1.9226
+    z: 0.0818
+    bonds: [O5']
+- name: DT3
+  pattern: DT
+  add atoms:
+  - atom name: H3T
+    x: 5.911984
+    y: 4.450161 
+    z: 3.797897
+    bonds: [O3']
+- name: DT5
+  pattern: T
+  remove atoms:
+  - atom name: O1P
+  - atom name: P
+  - atom name: O2P
+  add atoms:
+  - atom name: H5T
+    x: 2.5858
+    y: 1.9226
+    z: 0.0818
+    bonds: [O5']
+- name: RU3
+  pattern: RU
+  add atoms:
+  - atom name: H3T
+    x: 5.911984
+    y: 4.450161 
+    z: 3.797897
+    bonds: [O3']
+- name: RU5
+  pattern: RU
+  remove atoms:
+  - atom name: O1P
+  - atom name: P
+  - atom name: O2P
+  add atoms:
+  - atom name: H5T
+    x: 2.5858
+    y: 1.9226
+    z: 0.0818
+    bonds: [O5']
+- name: 5TERM
+  pattern: "*"
+  remove atoms:
+  - atom name: O1P
+  - atom name: P
+  - atom name: O2P
+  add atoms:
+  - atom name: H5T
+    x: 2.5858
+    y: 1.9226
+    z: 0.0818
+    bonds: [O5']
+- name: 3TERM
+  pattern: "*"
+  add atoms:
+  - atom name: H3T
+    x: 5.911984
+    y: 4.450161 
+    z: 3.797897
+    bonds: [O3']
