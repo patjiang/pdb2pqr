@@ -228,6 +228,10 @@ class Forcefield:
                         my_residue = ForcefieldResidue(resname)
                         self.map[resname] = my_residue
                     my_residue.add_atom(atom)
+        for resname, residue in self.map.items():
+            if resname.startswith("GLU"):
+                print(resname)
+                print(residue)
         # Now parse the XML file, associating with FF objects -
         # This is not necessary (if canonical names match ff names)
         try:
@@ -1003,6 +1007,13 @@ class ForcefieldResidue:
         if self.has_atom(atomname):
             return self.atoms[atomname]
         return None
+
+    def __str__(self):
+        atom_list = []
+        for name, atom in self.atoms.items():
+            atom_list.append(f"{name}: {atom}")
+        res_str = f"{self.name}: {','.join(atom_list)}"
+        return res_str
 
 
 class ForcefieldAtom:
