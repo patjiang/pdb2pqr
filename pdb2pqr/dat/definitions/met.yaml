@@ -1,0 +1,146 @@
+# This is a definition file for the methionine amino acid structure.
+# This file is part of PDB2PQR.
+# See https://www.poissonboltzmann.org/ for more information about use and redistribution.
+name: MET
+atoms:
+  - name: N
+    x:  1.201
+    y:  0.847
+    z:  0.000
+    bonds:
+      - CA
+      - H
+  - name: CA
+    x:  0.000
+    y:  0.000
+    z:  0.000
+    bonds:
+      - N
+      - C
+      - CB
+      - HA
+  - name: C
+    x:  -1.250
+    y:  0.881
+    z:  0.000
+    bonds:
+      - CA
+      - O
+  - name: O
+    x:  -2.185
+    y:  0.660
+    z:  -0.784
+    bonds:
+      - C
+  - name: CB
+    x:  0.022
+    y:  -0.966
+    z:  1.181
+    bonds:
+      - CA
+      - CG
+      - HB2
+      - HB3
+  - name: CG
+    x:  1.224
+    y:  -1.872
+    z:  1.131
+    bonds:
+      - CB
+      - SD
+      - HG2
+      - HG3
+  - name: SD
+    x:  1.131
+    y:  -2.818
+    z:  -0.431
+    bonds:
+      - CG
+      - CE
+  - name: CE
+    x:  -0.436
+    y:  -3.661
+    z:  -0.189
+    bonds:
+      - SD
+      - HE1
+      - HE2
+      - HE3
+  - name: H
+    altnames:
+      - HN
+    x:  1.201
+    y:  1.847
+    z:  0.000
+    bonds:
+      - N
+  - name: HA
+    x:  0.000
+    y:  -0.539
+    z:  -0.842
+    bonds:
+      - CA
+  - name: HB2
+    altnames:
+      - 2HB
+    x:  0.047
+    y:  -0.440
+    z:  2.031
+    bonds:
+      - CB
+  - name: HB3
+    altnames:
+      - 1HB
+      - HB1
+      - 3HB
+    x:  -0.807
+    y:  -1.525
+    z:  1.159
+    bonds:
+      - CB
+  - name: HG2
+    altnames:
+      - 2HG
+    x:  2.063
+    y:  -1.328
+    z:  1.152
+    bonds:
+      - CG
+  - name: HG3
+    altnames:
+      - 1HG
+      - HG1
+      - 3HG
+    x:  1.214
+    y:  -2.498
+    z:  1.911
+    bonds:
+      - CG
+  - name: HE1
+    altnames:
+      - 1HE
+    x:  -0.384
+    y:  -4.233
+    z:  0.630
+    bonds:
+      - CE
+  - name: HE2
+    altnames:
+      - 2HE
+    x:  -1.165
+    y:  -2.986
+    z:  -0.078
+    bonds:
+      - CE
+  - name: HE3
+    altnames:
+      - 3HE
+    x:  -0.632
+    y:  -4.236
+    z:  -0.984
+    bonds:
+      - CE
+dihedrals:
+  - [N, CA, CB, CG]
+  - [CA, CB, CG, SD]
+  - [CB, CG, SD, CE]

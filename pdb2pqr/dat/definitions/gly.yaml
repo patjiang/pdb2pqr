@@ -1,0 +1,60 @@
+# This is a definition file for the glycine amino acid structure.
+# This file is part of PDB2PQR.
+# See https://www.poissonboltzmann.org/ for more information about use and redistribution.
+name: GLY
+atoms:
+  - name: N
+    x: 1.201
+    y: 0.847
+    z: 0.000
+    bonds:
+    - CA
+    - H
+  - name: CA
+    x: 0.000
+    y: 0.000
+    z: 0.000
+    bonds:
+    - N
+    - C
+    - HA2
+    - HA3
+  - name: C
+    x: -1.250
+    y: 0.881
+    z: 0.000
+    bonds:
+    - CA
+    - O
+  - name: O
+    x: -2.185
+    y: 0.660
+    z: -0.784
+    bonds:
+    - C
+  - name: H
+    altnames:
+    - HN
+    x: 1.201
+    y: 1.847
+    z: 0.000
+    bonds:
+    - N
+  - name: HA2
+    altnames:
+    - 2HA
+    x: 0.000
+    y: -0.577
+    z: -0.816
+    bonds:
+    - CA
+  - name: HA3
+    altnames:
+    - 1HA
+    - HA1
+    - 3HA
+    x: 0.000
+    y: -0.577
+    z: 0.816
+    bonds:
+    - CA

@@ -1,0 +1,36 @@
+# This is a definition file for the water structure.
+# This file is part of PDB2PQR.
+# See https://www.poissonboltzmann.org/ for more information about use and redistribution.
+name: WAT
+atoms:
+  - name: O
+    altnames:
+      - OH2
+      - OW
+      - OH
+    x: 3.240
+    y: 55.829
+    z: 19.243
+    bonds:
+      - H1
+      - H2
+  - name: H1
+    altnames:
+      - HW
+      - HH1
+      - 1H
+    x: 2.865
+    y: 56.756
+    z: 19.243
+    bonds:
+      - O
+  - name: H2
+    altnames:
+      - HW
+      - HH2
+      - 2H
+    x: 4.240
+    y: 55.829
+    z: 19.243
+    bonds:
+      - O

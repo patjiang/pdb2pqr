@@ -1,0 +1,159 @@
+# This is a definition file for the leucine amino acid structure.
+# This file is part of PDB2PQR.
+# See https://www.poissonboltzmann.org/ for more information about use and redistribution.
+name: LEU
+atoms:
+  - name: N
+    x: 1.201
+    y: 0.847
+    z: 0.000
+    bonds:
+      - CA
+      - H
+  - name: CA
+    x: 0.000
+    y: 0.000
+    z: 0.000
+    bonds:
+      - N
+      - C
+      - CB
+      - HA
+  - name: C
+    x: -1.250
+    y: 0.881
+    z: 0.000
+    bonds:
+      - CA
+      - O
+  - name: O
+    x: -2.185
+    y: 0.660
+    z: -0.784
+    bonds:
+      - C
+  - name: CB
+    x: 0.099
+    y: -0.942
+    z: 1.206
+    bonds:
+      - CA
+      - CG
+      - HB2
+      - HB3
+  - name: CG
+    x: 1.297
+    y: -1.879
+    z: 1.254
+    bonds:
+      - CB
+      - CD1
+      - CD2
+      - HG
+  - name: CD1
+    x: 1.249
+    y: -2.745
+    z: 2.508
+    bonds:
+      - CG
+      - HD11
+      - HD12
+      - HD13
+  - name: CD2
+    x: 1.275
+    y: -2.755
+    z: 0.006
+    bonds:
+      - CG
+      - HD21
+      - HD22
+      - HD23
+  - name: H
+    altnames:
+      - HN
+    x: 1.201
+    y: 1.847
+    z: 0.000
+    bonds:
+      - N
+  - name: HA
+    x: 0.000
+    y: -0.551
+    z: -0.834
+    bonds:
+      - CA
+  - name: HB2
+    altnames:
+      - 2HB
+    x: 0.127
+    y: -0.375
+    z: 2.030
+    bonds:
+      - CB
+  - name: HB3
+    altnames:
+      - 1HB
+      - HB1
+      - 3HB
+    x: -0.726
+    y: -1.506
+    z: 1.217
+    bonds:
+      - CB
+  - name: HG
+    x: 2.138
+    y: -1.338
+    z: 1.260
+    bonds:
+      - CG
+  - name: HD11
+    altnames:
+      - 1HD1
+    x: 1.263
+    y: -2.159
+    z: 3.318
+    bonds:
+      - CD1
+  - name: HD12
+    altnames:
+      - 2HD1
+    x: 0.410
+    y: -3.289
+    z: 2.505
+    bonds:
+      - CD1
+  - name: HD13
+    altnames:
+      - 3HD1
+    x: 2.042
+    y: -3.354
+    z: 2.523
+    bonds:
+      - CD1
+  - name: HD21
+    altnames:
+      - 1HD2
+    x: 0.427
+    y: -3.285
+    z: -0.014
+    bonds:
+      - CD2
+  - name: HD22
+    altnames:
+      - 2HD2
+    x: 1.326
+    y: -2.177
+    z: -0.808
+    bonds:
+      - CD2
+  - name: HD23
+    altnames:
+      - 3HD2
+    x: 2.057
+    y: -3.378
+    z: 0.022
+    bonds:
+      - CD2
+dihedrals:
+  - [N, CA, CB, CG]
+  - [CA, CB, CG, CD1]

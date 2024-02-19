@@ -1,0 +1,121 @@
+# This is a definition file for the proline amino acid structure.
+# This file is part of PDB2PQR.
+# See https://www.poissonboltzmann.org/ for more information about use and redistribution.
+name: PRO
+atoms:
+  - name: N
+    x: 1.201
+    y: 0.847
+    z: 0.000
+    bonds:
+      - CA
+      - CD
+  - name: CA
+    x: 0.000
+    y: 0.000
+    z: 0.000
+    bonds:
+      - N
+      - C
+      - CB
+      - HA
+  - name: C
+    x: -1.250
+    y: 0.881
+    z: 0.000
+    bonds:
+      - CA
+      - O
+  - name: O
+    x: -2.185
+    y: 0.660
+    z: -0.784
+    bonds:
+      - C
+  - name: CB
+    x: 0.124
+    y: -0.783
+    z: 1.314
+    bonds:
+      - CA
+      - CG
+      - HB2
+      - HB3
+  - name: CG
+    x: 0.895
+    y: 0.139
+    z: 2.221
+    bonds:
+      - CB
+      - CD
+      - HG2
+      - HG3
+  - name: CD
+    x: 1.874
+    y: 0.862
+    z: 1.306
+    bonds:
+      - CG
+      - N
+      - HD2
+      - HD3
+  - name: HA
+    x: 0.000
+    y: -0.619
+    z: -0.785
+    bonds:
+      - CA
+  - name: HB2
+    altnames:
+      - 2HB
+    x: -0.779
+    y: -0.981
+    z: 1.695
+    bonds:
+      - CB
+  - name: HB3
+    altnames:
+      - 1HB
+      - HB1
+      - 3HB
+    x: 0.621
+    y: -1.638
+    z: 1.172
+    bonds:
+      - CB
+  - name: HG2
+    altnames:
+      - 2HG
+    x: 0.280
+    y: 0.791
+    z: 2.664
+    bonds:
+      - CG
+  - name: HG3
+    altnames:
+      - 1HG
+      - HG1
+      - 3HG
+    x: 1.385
+    y: -0.384
+    z: 2.918
+    bonds:
+      - CG
+  - name: HD2
+    altnames:
+      - 2HD
+    x: 2.028
+    y: 1.799
+    z: 1.617
+    bonds:
+      - CD
+  - name: HD3
+    altnames:
+      - 1HD
+      - HD1
+      - 3HD
+    x: 2.748
+    y: 0.377
+    z: 1.263
+    bonds:
+      - CD

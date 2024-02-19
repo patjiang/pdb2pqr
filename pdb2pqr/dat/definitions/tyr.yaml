@@ -1,0 +1,172 @@
+# This is a definition file for the tyrosine amino acid structure.
+# This file is part of PDB2PQR.
+# See https://www.poissonboltzmann.org/ for more information about use and redistribution.
+name: TYR
+atoms:
+  - name: N
+    x: 1.201
+    y: 0.847
+    z: 0.000
+    bonds:
+      - CA
+      - H
+  - name: CA
+    x: 0.000
+    y: 0.000
+    z: 0.000
+    bonds:
+      - N
+      - C
+      - CB
+      - HA
+  - name: C
+    x: -1.250
+    y: 0.881
+    z: 0.000
+    bonds:
+      - CA
+      - O
+  - name: O
+    x: -2.185
+    y: 0.660
+    z: -0.784
+    bonds:
+      - C
+  - name: CB
+    x: 0.012
+    y: -0.963
+    z: 1.196
+    bonds:
+      - CA
+      - CG
+      - HB2
+      - HB3
+  - name: CG
+    x: 1.193
+    y: -1.914
+    z: 1.235
+    bonds:
+      - CB
+      - CD1
+      - CD2
+  - name: CD1
+    x: 2.381
+    y: -1.570
+    z: 1.891
+    bonds:
+      - CG
+      - CE1
+      - HD1
+  - name: CD2
+    x: 1.136
+    y: -3.152
+    z: 0.597
+    bonds:
+      - CG
+      - CE2
+      - HD2
+  - name: CE1
+    x: 3.480
+    y: -2.427
+    z: 1.889
+    bonds:
+      - CD1
+      - CZ
+      - HE1
+  - name: CE2
+    x: 2.228
+    y: -4.012
+    z: 0.583
+    bonds:
+      - CD2
+      - CZ
+      - HE2
+  - name: CZ
+    x: 3.404
+    y: -3.644
+    z: 1.219
+    bonds:
+      - CE1
+      - CE2
+      - OH
+  - name: OH
+    x: 4.469
+    y: -4.494
+    z: 1.141
+    bonds:
+      - CZ
+      - HH
+  - name: H
+    altnames:
+      - HN
+    x: 1.201
+    y: 1.847
+    z: 0.000
+    bonds:
+      - N
+  - name: HA
+    x: 0.000
+    y: -0.543
+    z: -0.840
+    bonds:
+      - CA
+  - name: HB2
+    altnames:
+      - 2HB
+    x: 0.023
+    y: -0.418
+    z: 2.034
+    bonds:
+      - CB
+  - name: HB3
+    altnames:
+      - 1HB
+      - HB1
+      - 3HB
+    x: -0.825
+    y: -1.509
+    z: 1.164
+    bonds:
+      - CB
+  - name: HD1
+    altnames:
+      - 1HD
+    x: 2.443
+    y: -0.694
+    z: 2.369
+    bonds:
+      - CD1
+  - name: HD2
+    altnames:
+      - 2HD
+    x: 0.290
+    y: -3.428
+    z: 0.140
+    bonds:
+      - CD2
+  - name: HE1
+    altnames:
+      - 1HE
+    x: 4.319
+    y: -2.169
+    z: 2.368
+    bonds:
+      - CE1
+  - name: HE2
+    altnames:
+      - 2HE
+    x: 2.166
+    y: -4.894
+    z: 0.115
+    bonds:
+      - CE2
+  - name: HH
+    x: 4.215
+    y: -5.298
+    z: 0.603
+    bonds:
+      - OH
+dihedrals:
+  - [N, CA, CB, CG]
+  - [CA, CB, CG, CD1]
+  - [CE2, CZ, OH, HH]
