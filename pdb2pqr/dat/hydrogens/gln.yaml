@@ -1,0 +1,9 @@
+# This file provides rules for hydrogen optimization.
+# This file is part of PDB2PQR.
+# See https://www.poissonboltzmann.org/ for more information about use and redistribution.
+name: GLN
+type: Flip
+angle: [CB, CG, CD, OE1]
+atoms:
+  - name: HE21
+  - name: HE22

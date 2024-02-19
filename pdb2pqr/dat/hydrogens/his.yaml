@@ -1,0 +1,11 @@
+# This file provides rules for hydrogen optimization.
+# This file is part of PDB2PQR.
+# See https://www.poissonboltzmann.org/ for more information about use and redistribution.
+name: HIS
+type: Flip
+angle: [CA, CB, CG, ND1]
+atoms:
+  - name: HD1
+  - name: HD2
+  - name: HE1
+  - name: HE2

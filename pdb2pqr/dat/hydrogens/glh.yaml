@@ -1,0 +1,11 @@
+# This file provides rules for hydrogen optimization.
+# This file is part of PDB2PQR.
+# See https://www.poissonboltzmann.org/ for more information about use and redistribution.
+name: GLH
+type: Carboxylic
+angle: [CB, CG, CD, OE1]
+atoms:
+  - name: HE2
+    bond: OE2
+  - name: HE1
+    bond: OE1

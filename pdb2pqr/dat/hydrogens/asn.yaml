@@ -1,0 +1,9 @@
+# This file provides rules for hydrogen optimization.
+# This file is part of PDB2PQR.
+# See https://www.poissonboltzmann.org/ for more information about use and redistribution.
+name: ASN
+type: Flip
+angle: [CA, CB, CG, OD1]
+atoms:
+  - name: HD21
+  - name: HD22
