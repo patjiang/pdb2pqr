@@ -1,0 +1,292 @@
+# This is a definition file for the dT nucleic acid structure.
+# This file is part of PDB2PQR.
+# See https://www.poissonboltzmann.org/ for more information about use and redistribution.
+name: DT
+atoms:
+  - name: P
+    x: 2.314489
+    y: 1.776673
+    z: -0.478436
+    bonds:
+      - O1P
+      - O2P
+      - O5'
+  - name: O1P
+    x: 1.933410
+    y: 3.073374
+    z: -1.081549
+    bonds:
+      - P
+  - name: O2P
+    x: 3.156547
+    y: 0.871841
+    z: -1.292450
+    bonds:
+      - P
+  - name: O5'
+    altnames:
+      - O5*
+    x: 2.994369
+    y: 2.142475
+    z: 0.922974
+    bonds:
+      - P
+      - C5'
+  - name: C5'
+    altnames:
+      - C5*
+    x: 2.156035
+    y: 2.551837
+    z: 2.019887
+    bonds:
+      - O5'
+      - H5'
+      - H5''
+      - C4'
+  - name: H5'
+    altnames:
+      - H5*
+      - H5'1
+      - H5*1
+      - 1H5'
+      - 1H5*
+    x: 1.452687
+    y: 1.753841
+    z: 2.257803
+    bonds:
+      - C5'
+  - name: H5''
+    altnames:
+      - H5**
+      - H5'2
+      - H5*2
+      - 2H5'
+      - 2H5*
+      - H5"
+    x: 1.604968
+    y: 3.450028
+    z: 1.741178
+    bonds:
+      - C5'
+  - name: C4'
+    altnames:
+      - C4*
+    x: 3.008252
+    y: 2.847921
+    z: 3.243186
+    bonds:
+      - C5'
+      - H4'
+      - O4'
+      - C3'
+  - name: H4'
+    altnames:
+      - H4*
+    x: 2.447118
+    y: 3.477373
+    z: 3.933851
+    bonds:
+      - C4'
+  - name: O4'
+    altnames:
+      - O4*
+    x: 3.228121
+    y: 1.605168
+    z: 3.977231
+    bonds:
+      - C4'
+      - C1'
+  - name: C1'
+    altnames:
+      - C1*
+    x: 4.558614
+    y: 1.150950
+    z: 3.777548
+    bonds:
+      - O4'
+      - H1'
+      - N1
+      - C2'
+  - name: H1'
+    altnames:
+      - H1*
+    x: 5.072002
+    y: 1.095281
+    z: 4.737461
+    bonds:
+      - C1'
+  - name: N1
+    x: 4.538757
+    y: -0.306565
+    z: 3.312624
+    bonds:
+      - C1'
+      - C6
+      - C2
+  - name: C6
+    x: 4.316907
+    y: -0.672508
+    z: 2.011175
+    bonds:
+      - N1
+      - H6
+      - C5
+  - name: H6
+    x: 4.145435
+    y: 0.083636
+    z: 1.259348
+    bonds:
+      - C6
+  - name: C5
+    x: 4.360319
+    y: -1.957589
+    z: 1.633974
+    bonds:
+      - C6
+      - C7
+      - C4
+  - name: C7
+    altnames:
+      - C5M
+    x: 4.118886
+    y: -2.368545
+    z: 0.211713
+    bonds:
+      - C5
+      - H71
+      - H72
+      - H73
+  - name: H71
+    altnames:
+      - H51
+    x: 4.859541
+    y: -1.896829
+    z: -0.434053
+    bonds:
+      - C7
+  - name: H72
+    altnames:
+      - H52
+      - 2H7
+      - 2H5
+    x: 4.201276
+    y: -3.452127
+    z: 0.127085
+    bonds:
+      - C7
+  - name: H73
+    altnames:
+      - H53
+      - 3H5
+      - 3H7
+    x: 3.120150
+    y: -2.055730
+    z: -0.092873
+    bonds:
+      - C7
+  - name: C4
+    x: 4.642747
+    y: -2.996990
+    z: 2.589735
+    bonds:
+      - C5
+      - O4
+      - N3
+  - name: O4
+    x: 4.702951
+    y: -4.199184
+    z: 2.336743
+    bonds:
+      - C4
+  - name: N3
+    x: 4.852825
+    y: -2.538493
+    z: 3.874277
+    bonds:
+      - C4
+      - H3
+      - C2
+  - name: H3
+    x: 5.070434
+    y: -3.289149
+    z: 4.634055
+    bonds:
+      - N3
+  - name: C2
+    x: 4.814724
+    y: -1.223882
+    z: 4.292304
+    bonds:
+      - N1
+      - N3
+      - O2
+  - name: O2
+    x: 5.014668
+    y: -0.915001
+    z: 5.455495
+    bonds:
+      - C2
+  - name: C3'
+    altnames:
+      - C3*
+    x: 4.415606
+    y: 3.377827
+    z: 2.961306
+    bonds:
+      - C4'
+      - H3'
+      - C2'
+      - O3'
+  - name: H3'
+    altnames:
+      - H3*
+    x: 4.412072
+    y: 3.941489
+    z: 2.028369
+    bonds:
+      - C3'
+  - name: C2'
+    altnames:
+      - C2*
+    x: 5.230443
+    y: 2.095696
+    z: 2.779425
+    bonds:
+      - C1'
+      - C3'
+      - H2'
+      - H2''
+  - name: H2'
+    altnames:
+      - H2*
+      - H2'1
+      - H2*1
+      - 1H2'
+      - 1H2*
+    x: 5.668211
+    y: 2.081313
+    z: 1.781301
+    bonds:
+      - C2'
+  - name: H2''
+    altnames:
+      - H2**
+      - H2'2
+      - H2*2
+      - 2H2'
+      - 2H2*
+    x: 6.025106
+    y: 2.060820
+    z: 3.524673
+    bonds:
+      - C2'
+  - name: O3'
+    altnames:
+      - O3*
+    x: 5.029898
+    y: 4.128649
+    z: 3.998279
+    bonds:
+      - C3'
+dihedrals:
+  - [C6, C5, C7, H71]
