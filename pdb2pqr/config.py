@@ -164,7 +164,7 @@ BONDED_SS_LIMIT = 2.5
 PEPTIDE_DIST = 1.7
 
 #: Limit on fraction of molecule missing before giving up on repairs
-REPAIR_LIMIT = 0.15
+REPAIR_LIMIT = 0.25
 
 #: Cutoff for A - D - H(D) hydrogen bond angle
 ANGLE_CUTOFF = 20.0
