@@ -225,6 +225,8 @@ class Amino(residue.Residue):
                 if self.has_atom(bond) and bond.startswith("H"):
                     hatom = self.get_atom(bond)
                     break
+            if(hatom == None):
+                return False
             # Use the existing hydrogen and rotate about the bond
             self.rotate_tetrahedral(nextatom, bondatom, 120)
             newcoords = hatom.coords
